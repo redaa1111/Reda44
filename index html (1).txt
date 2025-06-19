@@ -1,0 +1,180 @@
+><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Electrónica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #FF0000;
+    }
+
+    header {
+      background-color: #0047ab;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #0047ab;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      background-color: white;
+      border: 2px solid #0047ab;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .producto h3 {
+      color: #d60000;
+      margin-top: 10px;
+    }
+
+    .producto p {
+      margin: 10px 0;
+    }
+
+    .producto button {
+      background-color: #0047ab;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .producto button:hover {
+      background-color: #003080;
+    }
+
+    footer {
+      background-color: #d60000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MÓVIL ASEMA</h1>
+    <p>Los mejores productos tecnológicos</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <main>
+    <section class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Teléfono" alt="SAMSUNG ULTRA S21" />
+        <h3>SAMSUNG ULTRA S21</h3>
+        <p>Alta calidad y gran rendimiento</p>
+        <button>Añadir al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Tablet+10%22" alt="Tablet 10 pulgadas" />
+        <h3>Tablet 10"</h3>
+        <p>Ideal para estudiar y ver películas</p>
+        <button>Añadir al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/200x150?text=Auriculares" alt="IPHONE 13 PRO" />
+        <h3>IPHONE 13 PRO</h3>
+        <p></p>
+        <button>Añadir al carrito</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+</body>
+</html>
+<section class="productos">
+  <div class="producto">
+    <img src="https://via.placeholder.com/200x150?text=Tel%C3%A9fono" alt="Teléfono Inteligente" />
+    <h3>Teléfono Inteligente</h3>
+    <p>Alta calidad y gran rendimiento</p>
+    <button>Añadir al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="https://via.placeholder.com/200x150?text=PC ACER+10%22" alt="PC ACER  pulgadas" />
+    <h3>PC ACER "</h3>
+    <p>Ideal para estudiar y ver películas</p>
+    <button>Añadir al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="https://via.placeholder.com/200x150?text=Auriculares" alt="Auriculares Bluetooth" />
+    <h3>Auriculares Bluetooth</h3>
+    <p>Sonido claro y conexión estable</p>
+    <button>Añadir
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>عرض تخفيض</title>
+  <style>
+    .sale-banner {
+      background-color: #FF0000; /* اللون الأحمر */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .sale-banner span {
+      font-<!DOCTYPE html>
+<html>
+<head>
+  <title>موقعي الأول</title>
+</head>
+<body>
+  <h1>مرحباً بكم في موقعي</h1>
+</body>
+</html>
