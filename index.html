@@ -1,151 +1,184 @@
-><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tienda de Electrónica</title>
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electro Movil iCame</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0070fa;
     }
 
     header {
-      background-color: #d60000;
-      color: white;
-      padding: 20px;
+      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://uploads.onecompiler.io/43pgtf5aq/43ph5qq3a/LOGO2.png'); /* Change this URL to your image */
+      background-size: cover;
+      background-position: center;
+      color: #0070fa;
+      padding: 60px 40px;
       text-align: center;
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
     nav {
-      background-color: #0047ab;
+      background: #000000;
       padding: 10px;
       text-align: center;
     }
 
     nav a {
-      color: white;
+      color: #000000;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    main {
-      padding: 20px;
+    .container {
+      padding: 30px;
     }
 
-    .productos {
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    .producto {
-      background-color: white;
-      border: 2px solid #0047ab;
+    .product {
+      background-color: #fff;
+      border: 1px solid #fff;
       border-radius: 10px;
       padding: 15px;
       text-align: center;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .producto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
 
-    .producto h3 {
-      color: #d60000;
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      margin: 0;
+    }
+
+    .buy-button {
       margin-top: 10px;
-    }
-
-    .producto p {
-      margin: 10px 0;
-    }
-
-    .producto button {
-      background-color: #0047ab;
+      background-color: #28a745;
       color: white;
+      padding: 10px 20px;
       border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
     }
 
-    .producto button:hover {
-      background-color: #003080;
-    }
-
     footer {
-      background-color: #d60000;
-      color: white;
+      background: #1a1a1a;
+      color: #fff;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>ELECTRO MOVIL ICAME</h1>
-    <p>Los mejores productos tecnológicos</p>
+    <h1>📱 ELECTRO MOVIL ICAME</h1>
+    <p>WELCOM TO ICAME STORE </p>
   </header>
 
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Productos</a>
-    <a href="#">Ofertas</a>
-    <a href="mailto: mohamedredazekraoui@gmail.com">Contacto</a>
+    <a href="#">about us</a>
+    <a href="#">products</a>
+    <a href="mailto:mohamedredazekraoui@gmail.com">contact</a>
   </nav>
 
-  <main>
-    <section class="productos">
-      <div class="producto">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgtb3s5/Straight%20Talk%20Apple%20iPhone%2016%20Plus,%20128gb,%20Blue%20-%20Prepaid%20Smartphone%20%5BLocked%20to%20Straight%20Talk%5D.jpg" alt="SAMSUNG ULTRA S21 700$" />
-        <h3>SAMSUNG ULTRA S21</h3>
-        <p>Alta calidad y gran rendimiento</p>
-        <button>Añadir al carrito</button>
+  <div class="container">
+    <h2>🔥 Featured Products</h2>
+    <div class="product-grid">
+
+      <!-- iPhone 16 -->
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgtb3s5/Straight%20Talk%20Apple%20iPhone%2016%20Plus,%20128gb,%20Blue%20-%20Prepaid%20Smartphone%20%5BLocked%20to%20Straight%20Talk%5D.jpg" alt="iPhone 16">
+        <h3>iPhone 16</h3>
+        <p>€1,199.00</p>
+        <form action="mailto: mohamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="mohamedredazekraoui@gmail.com">
+          <input type="hidden" name="item_name" value="iPhone 16">
+          <input type="hidden" name="amount" value="1199.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="submit" class="buy-button" value="Buy Now">
+        </form>
       </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/200x150?text=Tablet+10%22" alt="Tablet 10 pulgadas" />
-        <h3>Tablet 10"</h3>
-        <p>Ideal para estudiar y ver películas</p>
-        <button>Añadir al carrito</button>
+
+      <!-- Samsung Galaxy S24 Ultra -->
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgvspry/Samsung%20Galaxy%20S24%20Ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+        <h3>Samsung Galaxy S24 Ultra</h3>
+        <p>€700.00</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="mohamedredazekraoui@gmail.com">
+          <input type="hidden" name="item_name" value="Samsung Galaxy S24 Ultra">
+          <input type="hidden" name="amount" value="700.99">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="submit" class="buy-button" value="Buy Now">
+        </form>
       </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/200x150?text=Auriculares" alt="IPHONE 13 PRO" />
-        <h3>IPHONE 13 PRO</h3>
-        <p>Sonido claro y conexión estable</p>
-        <button>Añadir al carrito</button>
+
+        <!-- HP Laptop -->
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgvspry/Laptops%20-%20Cheap%20Laptop%20Deals%20_%20Currys.jpg" alt="HP Laptop">
+        <h3>HP Laptop 15</h3>
+        <p>€549.00</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="mohamedredazekraoui@gmail.com">
+          <input type="hidden" name="item_name" value="HP Laptop 15">
+          <input type="hidden" name="amount" value="549.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="submit" class="buy-button" value="Buy Now">
+        </form>
       </div>
-    </section>
-  </main>
+
+      <!-- redmi not 13  -->
+      <div class="product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pjxhy43/Redmi%20Note%2013%20Pro%20to%20Launch%20Globally%20with%20LTE%20and%205G%20Variants.jpg" alt="HP Laptop">
+        <h3>redmi not 13 </h3>
+        <p>€300.00</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="mohamedredazekraoui@gmail.com">
+          <input type="hidden" name="item_name" value="HP Laptop 15">
+          <input type="hidden" name="amount" value="549.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="submit" class="buy-button" value="Buy Now">
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   <footer>
+    © 2025 Electro Movil iCame – All rights reserved<br>
+    Murcia, Totana – Postal Code 30850 | Email: mohamedredazekraoui@gmail.com
+  </footer>
 
-</body>
-</html>
-<section class="productos">
-  <div class="producto">
-    <img src="https://via.placeholder.com/200x150?text=Tel%C3%A9fono" alt="Teléfono Inteligente" />
-    <h3>Teléfono Inteligente</h3>
-    <p>Alta calidad y gran rendimiento</p>
-    <button>Añadir al carrito</button>
-  </div>
 
-  <div class="producto">
-    <img src="https://via.placeholder.com/200x150?text=PC ACER+10%22" alt="PC ACER  pulgadas" />
-    <h3>PC ACER "</h3>
-    <p>Ideal para estudiar y ver películas</p>
-    <button>Añadir al carrito</button>
-  </div>
-
-  <div class="producto">
-    <img src="https://via.placeholder.com/200x150?text=Auriculares" alt="Auriculares Bluetooth" />
-    <h3>Auriculares Bluetooth</h3>
-    <p>Sonido claro y conexión estable</p>
-    <button>Añadir
+</body></html>
