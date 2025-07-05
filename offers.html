@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8" />
@@ -20,7 +21,6 @@
       gap: 20px;
     }
 
-    /* Gradient background for all products */
     .product {
       background: linear-gradient(to bottom right, #0070fa, #ff0000);
       color: white;
@@ -36,7 +36,7 @@
       object-fit: contain;
       margin-bottom: 10px;
       border-radius: 10px;
-      background: white; /* So product images stand out */
+      background: white;
     }
 
     .product h3 {
@@ -47,19 +47,17 @@
       margin: 0;
     }
 
-    /* Sold product style */
-    .sold-product p span.price {
-      text-decoration: line-through;
-      color: #ddd;
-    }
-
-    .sold-product p span.sold-label {
+    .product p span.sold-label {
       color: yellow;
       font-weight: bold;
       margin-left: 10px;
     }
 
-    /* Buy button style */
+    .sold-product p span.price {
+      text-decoration: line-through;
+      color: #ddd;
+    }
+
     .buy-button {
       margin-top: 10px;
       background-color: #28a745;
@@ -76,7 +74,6 @@
       background-color: #218838;
     }
 
-    /* Disabled buy button on sold products */
     .sold-product .buy-button {
       background-color: #666 !important;
       cursor: not-allowed;
@@ -97,99 +94,67 @@
     <h2>SPECIAL OFFERS🔥</h2>
     <div class="product-grid">
 
-      <!-- samsung z flip 6 - SOLD -->
+      <!-- Sold Products -->
       <div class="product sold-product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43ppfgap4/Samsung%20Galaxy%20Z%20Flip%206.jpg" alt="samsung Z flip 6" />
         <h3>samsung Z flip 6</h3>
-        <p>
-          <span class="price">€1,100</span>
-          <span class="sold-label">SOLD</span>
-        </p>
+        <p><span class="price">€1,100</span><span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="samsung Z flip 6" />
-          <input type="hidden" name="amount" value="1100.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" disabled />
         </form>
       </div>
 
-      <!-- iPhone 16 - SOLD -->
       <div class="product sold-product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgtb3s5/Straight%20Talk%20Apple%20iPhone%2016%20Plus,%20128gb,%20Blue%20-%20Prepaid%20Smartphone%20%5BLocked%20to%20Straight%20Talk%5D.jpg" alt="iPhone 16" />
         <h3>iPhone 16</h3>
-        <p>
-          <span class="price">€1,000</span>
-          <span class="sold-label">SOLD</span>
-        </p>
+        <p><span class="price">€1,000</span><span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="iPhone 16" />
-          <input type="hidden" name="amount" value="1000.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" disabled />
         </form>
       </div>
 
-      <!-- Samsung Galaxy S24 Ultra -->
+      <!-- Available Products -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgvspry/Samsung%20Galaxy%20S24%20Ultra.jpg" alt="Samsung Galaxy S24 Ultra" />
         <h3>Samsung Galaxy S24 Ultra</h3>
-        <p>€700.00</p>
+        <p>€700.00 <span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="Samsung Galaxy S24 Ultra" />
-          <input type="hidden" name="amount" value="700.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" />
         </form>
       </div>
 
-      <!-- HP Laptop -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgvspry/Laptops%20-%20Cheap%20Laptop%20Deals%20_%20Currys.jpg" alt="HP Laptop" />
         <h3>HP Laptop 15</h3>
-        <p>€549.00</p>
+        <p>€549.00 <span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="HP Laptop 15" />
-          <input type="hidden" name="amount" value="549.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" />
         </form>
       </div>
 
-      <!-- redmi not 13 -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43pjxhy43/Redmi%20Note%2013%20Pro%20to%20Launch%20Globally%20with%20LTE%20and%205G%20Variants.jpg" alt="redmi not 13" />
         <h3>redmi not 13</h3>
-        <p>€300.00</p>
+        <p>€300.00 <span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="redmi not 13 pro" />
-          <input type="hidden" name="amount" value="300.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" />
         </form>
       </div>
 
-      <!-- apple watch s2 -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43pqa3m8n/Apple%20Watch%20SE%20(2nd%20Gen)%20%5BGPS%2040mm%5D%20Smart%20Watch%20w_Midnight%20Aluminum%20Case%20&%20Midnight%20Sport%20Band%20-%20M_L.jpg" alt="apple watch s2" />
         <h3>apple watch s2</h3>
-        <p>€300.00</p>
+        <p>€300.00 <span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="apple watch s2" />
-          <input type="hidden" name="amount" value="300.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" />
         </form>
       </div>
 
-      <!-- MacBook air 13 -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pqa3m8n/Kuzy%20Compatible%20with%20MacBook%20Air%2013%20inch%20Case%202017%202015%20-%20A1466%20MacBook%20Air%20Case%20Cover%20Hardshell%20MacBook%20Air%2013_3%20inch%20Case%20-%20MacBook%20Air%202017%20Case%20-%20Older%20Version%20Case,%20Clear.jpg" alt="MacBook air 13" />
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pqa3m8n/Kuzy%20Compatible%20with%20MacBook%20Air%2013%20inch%20Case%202017%202015%20-%20A1466%20MacBook%20Air%20Case%20Cover%20Hardshell%20MacBook%20Air%2013_3%20inch%20Case%20-%20MacBook%20Air%202017%20Case%20-%20Older%20Version%20Case,%20Clear.jpg" alt="Macbook air 13" />
         <h3>Macbook air 13</h3>
-        <p>€900.00</p>
+        <p>€900.00 <span class="sold-label">SOLD</span></p>
         <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="macbook air 13" />
-          <input type="hidden" name="amount" value="900.00" />
-          <input type="hidden" name="currency_code" value="EUR" />
           <input type="submit" class="buy-button" value="Buy Now" />
         </form>
       </div>
@@ -203,3 +168,4 @@
   </footer>
 </body>
 </html>
+
