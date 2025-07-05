@@ -47,6 +47,127 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
+    .product {
+      background-color: #fff;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      margin: 0;
+    }
+
+    .buy-button {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover:not(:disabled) {
+      background-color: #218838;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Sold product style */
+    .sold-product {
+      background: linear-gradient(to bottom right, #0070fa, #ff0000);
+      color: white;
+    }
+
+    .sold-product p span.price {
+      text-decoration: line-through;
+      color: #ddd;
+    }
+
+    .sold-product p span.sold-label {
+      color: yellow;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    /* Disable buy button on sold */
+    .sold-product .buy-button {
+      background-color: #666 !important;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>SPECIAL OFFERS🔥</h2>
+    <div class="product-grid">
+
+      <!-- samsung z flip 6 - SOLD -->
+      <div class="product sold-product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43ppfgap4/Samsung%20Galaxy%20Z%20Flip%206.jpg" alt="samsung Z flip 6" />
+        <h3>samsung Z flip 6</h3>
+        <p>
+          <span class="price">€1,100</span>
+          <span class="sold-label">SOLD</span>
+        </p>
+        <form action="mailto: mohamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="item_name" value="samsung Z flip 6" />
+          <input type="hidden" name="amount" value="1100.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Buy Now" disabled />
+        </form>
+      </div>
+
+      <!-- iPhone 16 - SOLD -->
+      <div class="product sold-product">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgtb3s5/Straight%20Talk%20Apple%20iPhone%2016%20Plus,%20128gb,%20Blue%20-%20Prepaid%20Smartphone%20%5BLocked%20to%20Straight%20Talk%5D.jpg" alt="iPhone 16" />
+        <h3>iPhone 16</h3>
+        <p>
+          <span class="price">€1,000</span>
+          <span class="sold-label">SOLD</span>
+        </p>
+        <form action="mailto: mohamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="item_name" value="iPhone 16" />
+          <input type="hidden" name="amount" value="1000.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Buy Now" disabled />
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Electro Movil iCame – All rights reserved<br />
+    Murcia, Totana – Postal Code 30850 | Email: mohamedredazekraoui@gmail.com
+  </footer>
+</body>
+</html>
 
