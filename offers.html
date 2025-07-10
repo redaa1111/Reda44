@@ -39,9 +39,11 @@
     }
 
     .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
+      width: 80%; /* smaller image */
+      height: 140px;
+      object-fit: contain;
+      margin: 0 auto 10px;
+      display: block;
       border-radius: 10px;
       background: white;
     }
@@ -60,6 +62,7 @@
 
     .product h3 {
       margin: 15px 0 10px;
+      color: yellow; /* product name in yellow */
     }
 
     .buy-button {
@@ -110,13 +113,12 @@
     <h2>SPECIAL OFFERS 🔥</h2>
     <div class="product-grid">
 
-
-      <!-- Product Sold -->
+      <!-- SOLD Product -->
       <div class="product sold">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43py8v66q/Apple%20iPhone%2016%20(128%20GB)%20-%20Pink.jpg" alt="iPhone 16">
-        <div class="price-overlay">€1,000</div>
-        <h3>iPhone 16 €900</h3>
-        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Order%20Request%20(SOLD)%20-%20iPhone%2016&body=Hello,%20I%20am%20interested%20in%20iPhone%2016%20(%E2%82%AC1000.00),%20even%20if%20it's%20marked%20as%20SOLD.%20Is%20it%20still%20available%3F" class="buy-button">Buy Now</a>
+        <div class="price-overlay"><span style="text-decoration: line-through;">€1,000</span> → €900</div>
+        <h3>iPhone 16</h3>
+        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Order%20Request%20(SOLD)%20-%20iPhone%2016&body=Hello,%20I%20am%20interested%20in%20iPhone%2016%20(€900.00),%20even%20if%20it's%20marked%20as%20SOLD.%20Is%20it%20still%20available%3F" class="buy-button">Buy Now</a>
       </div>
 
     </div>
@@ -128,3 +130,4 @@
   </footer>
 </body>
 </html>
+
