@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #0070fa, #ff0000);
+      background: linear-gradient(to bottom right, #ff0#0070fa, 000);
     }
 
     .container {
@@ -65,13 +65,13 @@
 
     .sold-product p span.price {
       text-decoration: line-through;
-      color: #ddd;
+      color: #ff0000;
     }
-
+ 
     .sold-product p span.sold-label {
-      color: yellow;
+      color: red;
       font-weight: bold;
-      margin-left: 10px;
+     margin-left: 10px;
     }
 
     footer {
@@ -88,32 +88,101 @@
     <h2>SPECIAL OFFERS 🔥</h2>
     <div class="product-grid">
 
-      <!-- samsung z flip 6 - SOLD -->
-      <div class="product sold-product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43ppfgap4/Samsung%20Galaxy%20Z%20Flip%206.jpg" alt="Samsung Z Flip 6" />
-        <h3>Samsung Z Flip 6</h3>
-        <p><span class="price">€1,100</span><span class="sold-label">SOLD</span></p>
-      </div>
+      <style>
+  .product {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    background: #ff0000;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  .product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .price-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0070fa;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .buy-button:hover {
+    background-color: #0059c2;
+  }
+</style>
+
+<div class="product">
+  <img src="https://uploads.onecompiler.io/43pgtf5aq/43q6qfu62/Xiaomi%2015%20Ultra_%20ya%20conocemos%20sus%20principales%20especificaciones.jpg" alt="Product Name">
+  <div class="price-overlay">€999.00</div>
+  <h3>xiaomi 15 ultra </h3>
+  <a href="mailto:mohamedredazekraoui@gmail.com?subject=Order%20Request&body=Hello,%20I%20would%20like%20to%20order%20Product%20Name%20for%20€999.00" class="buy-button">Buy Now</a>
+</div>
+
+      
 
       <!-- samsung s20 ultra - SOLD -->
       <div class="product sold-product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43psnxhqe/Samsung%20Galaxy%20S20%20Ultra%20Mockup.jpg" alt="Samsung S20 Ultra" />
+        <img scr="https://uploads.onecompiler.io/43pgtf5aq/43q6qfu62/Xiaomi%2015%20Ultra_%20ya%20conocemos%20sus%20principales%20especificaciones.jpg" alt="Samsung S20 Ultra" />
         <h3>Samsung S20 Ultra</h3>
-        <p><span class="price">€1,100</span><span class="sold-label">SOLD</span></p>
+        <p><span class="price">€980,00</span><span class="sold-label">SOLD</span></p>
+        <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="item_name" value="Samsung S20 Ultra" />
+          <input type="hidden" name="amount" value="1100.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Buy Now" />
+        </form>
       </div>
 
       <!-- iPhone 16 - SOLD -->
       <div class="product sold-product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43pgtb3s5/Straight%20Talk%20Apple%20iPhone%2016%20Plus.jpg" alt="iPhone 16" />
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43py8v66q/Apple%20iPhone%2016%20(128%20GB)%20-%20Pink.jpg" alt="iPhone 16" />
         <h3>iPhone 16</h3>
         <p><span class="price">€1,000</span><span class="sold-label">SOLD</span></p>
+        <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="item_name" value="iPhone 16" />
+          <input type="hidden" name="amount" value="1000.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Buy Now" />
+        </form>
       </div>
 
-      <!-- MacBook Air 13 - SOLD -->
+      <!-- airpods pro 4 -->
       <div class="product sold-product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43psnxhqe/Kuzy%20Compatible%20with%20MacBook%20Air.jpg" alt="MacBook Air 13" />
-        <h3>MacBook Air 13</h3>
-        <p><span class="price">€1,500</span><span class="sold-label">SOLD</span></p>
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43py8v66q/Apple%20AirPods%20Pro%202,%20Wireless%20Earbuds,%20Active%20Noise%20Cancellation,%20Hearing%20Aid%20Feature%20-%20Walmart_com.jpg" alt="MacBook Air 13" />
+        <h3>airpods pro 4</h3>
+        <p><span class="price">€120</span><span class="sold-label">SOLD</span></p>
+        <form action="mailto:mhamedredazekraoui@gmail.com" method="post" target="_blank">
+          <input type="hidden" name="item_name" value="airpods pro 4" />
+          <input type="hidden" name="amount" value="1500.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Buy Now" />
+        </form>
       </div>
 
       <!-- HP Laptop -->
