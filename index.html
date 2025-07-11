@@ -16,40 +16,52 @@
       background-size: cover;
       background-position: center;
       color: #fff;
-      padding: 60px 40px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2em;
     }
 
     header p {
       margin-top: 10px;
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
-    nav {
+    .nav-menu {
       background: #0070fa;
-      padding: 10px;
+      padding: 8px;
       text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
     }
 
-    nav a {
-      color: #fff;
-      margin: 0 15px;
+    .nav-menu a {
+      background-color: white;
+      color: #0070fa;
+      padding: 6px 12px;
+      font-size: 0.9em;
       text-decoration: none;
       font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      background-color: #e0e0e0;
     }
 
     .container {
-      padding: 30px;
+      padding: 20px;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
@@ -74,38 +86,30 @@
     .product h3 {
       margin: 10px 0 5px;
       color: yellow;
+      font-size: 1em;
     }
 
     .product p {
       margin: 0;
       color: yellow;
+      font-size: 0.95em;
     }
 
     .buy-button {
       margin-top: 10px;
       background-color: #28a745;
       color: white;
-      padding: 10px 20px;
+      padding: 8px 16px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      font-size: 0.9em;
     }
 
-    .sold-product .price {
-      text-decoration: line-through;
-      color: #f0f0f0;
-    }
-
-    .sold-label {
-      color: yellow;
-      font-weight: bold;
-      margin-left: 8px;
-    }
-
-    .sold-product .buy-button {
-      display: none;
+    .buy-button:hover {
+      background-color: #218838;
     }
 
     footer {
@@ -114,6 +118,7 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -124,14 +129,14 @@
     <p>Tu tienda de electrónica de confianza</p>
   </header>
 
-  <nav>
-    <a href="about.html">sobre nosotros</a>
-    <a href="offers.html">ofertas especiales</a>
-    <a href="mailto:mohamedredazekraoui@gmail.com">contacto</a>
+  <nav class="nav-menu">
+    <a href="about.html">📘 Sobre Nosotros</a>
+    <a href="offers.html">🎁 Ofertas</a>
+    <a href="mailto:mohamedredazekraoui@gmail.com">✉️ Contacto</a>
   </nav>
 
   <div class="container">
-    <h2>🔥 Productos Destacados</h2>
+    <h2 style="color:white; text-align:center;">🔥 Productos Destacados</h2>
     <div class="product-grid">
 
       <!-- Samsung Galaxy S24 Ultra -->
@@ -204,7 +209,7 @@
 
   <footer>
     © 2025 Electro Movil iCame – Todos los derechos reservados<br>
-    Murcia, Totana – Código Postal 30850 | Email: mohamedredazekraoui@gmail.com
+    Totana, Murcia – Código Postal 30850 | Correo: mohamedredazekraoui@gmail.com
   </footer>
 
 </body>
