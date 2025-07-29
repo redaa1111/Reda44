@@ -27,4 +27,171 @@
       left: 15px;
       background-color: #0070fa;
       color: #fff;
-      border: no
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,112,250,0.4);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    .go-back:hover {
+      background-color: #005bb5;
+    }
+    /* Header */
+    header {
+      background-color: #0070fa;
+      color: #fff;
+      width: 100%;
+      max-width: 600px;
+      padding: 40px 25px;
+      border-radius: 12px 12px 0 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,112,250,0.3);
+      margin-bottom: 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 1.2px;
+    }
+    /* Contenedor formulario */
+    .container {
+      background: #fff;
+      width: 100%;
+      max-width: 600px;
+      padding: 30px 30px 40px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: #004a99;
+      font-size: 1.1rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: inherit;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #0070fa;
+      box-shadow: 0 0 8px rgba(0,112,250,0.5);
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.4;
+    }
+    button[type="submit"] {
+      margin-top: 30px;
+      background-color: #0070fa;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,112,250,0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #005bb5;
+      transform: translateY(-2px);
+    }
+    /* Enlace contacto directo */
+    .contact-link {
+      margin-top: 25px;
+      display: inline-block;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0070fa;
+      text-decoration: none;
+      border: 2px solid #0070fa;
+      padding: 12px 25px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    .contact-link:hover {
+      background-color: #0070fa;
+      color: white;
+      text-decoration: none;
+    }
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      color: #666;
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      header, .container, footer {
+        border-radius: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      button.go-back {
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="go-back" onclick="history.back()">🔙 Volver</button>
+
+  <header>
+    <h1>Contacto</h1>
+  </header>
+
+  <div class="container">
+    <form action="mailto:mohamedredazekraoui@gmail.com" method="post" enctype="text/plain" novalidate>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="Nombre" placeholder="Tu nombre completo" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="Correo" placeholder="tuemail@ejemplo.com" required />
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="Mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <a class="contact-link" href="mailto:mohamedredazekraoui@gmail.com" title="Enviar correo directo">
+      ✉️ Contacto directo por correo
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Electro Movil iCame – Todos los derechos reservados<br />
+    Totana, Murcia – Código Postal 30850
+  </footer>
+
+</body>
+</html>
+
