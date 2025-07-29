@@ -1,12 +1,11 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="9NZi0tu_TuIO2xqq9Gi5LXqSk157gLn-NdBf_sFtHsE" />
 
-  <title>Electro Movil iCame - Móviles, Portátiles y Accesorios en Totana</title>
+  <title>Electro Movil iCame - Móviles, Portátiles y Accesorios en totana</title>
 
   <meta name="description" content="Electro Movil iCame ofrece móviles, portátiles y accesorios tecnológicos a precios competitivos. Envíos rápidos desde Totana, Murcia." />
   <meta name="keywords" content="Electro Movil, móviles baratos, portátiles económicos, iPhone, Samsung, Realme, tecnología, Totana, Murcia" />
@@ -18,14 +17,214 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://uploads.onecompiler.io/43pgtf5aq/43pphu93f/Electro%20Movile%20logo.png" />
 
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+    }
+
+    .go-back {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      background-color: #0070fa;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-back:hover {
+      background-color: #005bb5;
+    }
+
+    .go-contacto {
+      position: fixed;
+      top: 10px;
+      left: 110px; /* Adjust to sit next to the go-back button */
+      z-index: 999;
+      background-color: #0070fa;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-contacto:hover {
+      background-color: #005bb5;
+    }
+
+    header {
+      background: url('https://uploads.onecompiler.io/43pgtf5aq/43pphu93f/Electro%20Movile%20logo.png') center/cover no-repeat;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
+    .nav-menu {
+      background: #0070fa;
+      padding: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .nav-menu a {
+      background-color: white;
+      color: #0070fa;
+      padding: 8px 16px;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .container h2 {
+      color: #0070fa;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    .product p {
+      margin: 0;
+      color: #e60000;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .buy-button {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+
+      .nav-menu a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+      }
+
+      .product h3 {
+        font-size: 1em;
+      }
+
+      .product p {
+        font-size: 0.9em;
+      }
+
+      .buy-button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
+
+      /* Adjust fixed buttons for small screens */
+      .go-back {
+        left: 5px;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      .go-contacto {
+        left: 90px;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <button class="go-back" onclick="history.back()">🔙 Volver</button>
   <a href="contacto.html" class="go-contacto">✉️ Contacto</a>
 
-  <header class="main-header">
+  <header>
     <h1>Electro Movil iCame</h1>
     <p>Tu tienda de electrónica de confianza</p>
   </header>
@@ -33,7 +232,8 @@
   <nav class="nav-menu">
     <a href="about.html">📘 Sobre Nosotros</a>
     <a href="offers.html">🎁 Ofertas</a>
-  </nav
+    <a href="mailto:mohamedredazekraoui@gmail.com">✉️ Contacto</a>
+  </nav>
 
   <div class="container">
     <h2>Productos destacados 🛒</h2>
@@ -41,7 +241,7 @@
 
       <!-- iphone 13 pro -->
       <div class="product">
-        <img src="iphone.html" alt="iphone 13 pro">
+        <img src="iphone.jpg" alt="iphone 13 pro">
         <h3>iphone 13 pro</h3>
         <p>€450.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -54,7 +254,7 @@
 
       <!-- samsung galaxy a55 -->
       <div class="product">
-        <img src="samsung.html" alt="samsung galaxy a55">
+        <img src="samsung.jpg" alt="samsung galaxy a55">
         <h3>samsung galaxy a55</h3>
         <p>€280.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -67,7 +267,7 @@
 
       <!-- Samsung Galaxy S21 Ultra -->
       <div class="product">
-        <img src="sam21.html" alt="Samsung Galaxy S21 Ultra">
+        <img src="sam21.jpg" alt="Samsung Galaxy S21 Ultra">
         <h3>Samsung Galaxy S21 Ultra</h3>
         <p>€350.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -80,7 +280,7 @@
 
       <!-- HP Laptop -->
       <div class="product">
-        <img src="laptophp.html" alt="HP Laptop 15">
+        <img src="hp_laptop.jpg" alt="HP Laptop 15">
         <h3>HP Laptop 15</h3>
         <p>€549.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
