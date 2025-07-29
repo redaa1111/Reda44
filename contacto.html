@@ -5,108 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto - Electro Movil iCame</title>
   <style>
+    /* Reset y base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f0ff, #f4f4f4);
       margin: 0;
       padding: 20px;
-    }
-
-    header {
-      background: #0070fa;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       color: #333;
     }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-      resize: vertical;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    button {
-      margin-top: 20px;
-      background-color: #0070fa;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #005bb5;
-    }
-
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      color: #666;
-      font-size: 0.9em;
-    }
-
+    /* Botón volver */
     .go-back {
       position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 999;
+      top: 15px;
+      left: 15px;
       background-color: #0070fa;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    .go-back:hover {
-      background-color: #005bb5;
-    }
-  </style>
-</head>
-<body>
-<a href="mailto:mohamedredazekraoui@gmail.com">✉️ Contacto</a>
-    }
-  </style>
-</head>
-<body>
-
-  <button class="go-back" onclick="history.back()">🔙 Volver</button>
-
+      color: #fff;
+      border: no
