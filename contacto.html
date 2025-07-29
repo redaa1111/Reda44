@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - Electro Movil iCame</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      background: #0070fa;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #0070fa;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .go-back {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      background-color: #0070fa;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-back:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="go-back" onclick="history.back()">🔙 Volver</button>
+
+  <header>
+    <h1>Contacto</h1>
+  </header>
+
+  <div class="container">
+    <form action="mailto:mohamedredazekraoui@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="Nombre" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="Correo" required />
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="Mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Electro Movil iCame – Todos los derechos reservados<br>
+    Totana, Murcia – Código Postal 30850
+  </footer>
+
+</body>
+</html>
