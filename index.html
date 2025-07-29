@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="9NZi0tu_TuIO2xqq9Gi5LXqSk157gLn-NdBf_sFtHsE" />
 
-  <title>Electro Movil iCame - Móviles, Portátiles y Accesorios en Madrid</title>
+  <title>Electro Movil iCame - Móviles, Portátiles y Accesorios en totana</title>
 
   <meta name="description" content="Electro Movil iCame ofrece móviles, portátiles y accesorios tecnológicos a precios competitivos. Envíos rápidos desde Totana, Murcia." />
   <meta name="keywords" content="Electro Movil, móviles baratos, portátiles económicos, iPhone, Samsung, Realme, tecnología, Totana, Murcia" />
@@ -37,6 +37,34 @@
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-back:hover {
+      background-color: #005bb5;
+    }
+
+    .go-contacto {
+      position: fixed;
+      top: 10px;
+      left: 110px; /* Adjust to sit next to the go-back button */
+      z-index: 999;
+      background-color: #0070fa;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-contacto:hover {
+      background-color: #005bb5;
     }
 
     header {
@@ -176,12 +204,25 @@
         padding: 6px 12px;
         font-size: 0.9em;
       }
+
+      /* Adjust fixed buttons for small screens */
+      .go-back {
+        left: 5px;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      .go-contacto {
+        left: 90px;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
   <button class="go-back" onclick="history.back()">🔙 Volver</button>
+  <a href="contacto.html" class="go-contacto">✉️ Contacto</a>
 
   <header>
     <h1>Electro Movil iCame</h1>
@@ -197,39 +238,41 @@
   <div class="container">
     <h2>Productos destacados 🛒</h2>
     <div class="product-grid">
-  
+
       <!-- iphone 13 pro -->
       <div class="product">
-        <img src="iphone.html" alt="iphone 13 pro">
+        <img src="iphone.jpg" alt="iphone 13 pro">
         <h3>iphone 13 pro</h3>
         <p>€450.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="item_name" value="iphone 13 pro">
-          <input type="hidden" name="amount" value="500.00">
+          <input type="hidden" name="amount" value="450.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
       </div>
+
       <!-- samsung galaxy a55 -->
       <div class="product">
-        <img src="samsung.html" alt="samsung galaxy a55">
+        <img src="samsung.jpg" alt="samsung galaxy a55">
         <h3>samsung galaxy a55</h3>
         <p>€280.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="item_name" value="samsung galaxy a55">
-          <input type="hidden" name="amount" value="250.00">
+          <input type="hidden" name="amount" value="280.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
       </div>
+
       <!-- Samsung Galaxy S21 Ultra -->
       <div class="product">
-        <img src="sam21.html" alt="Samsung Galaxy S21 Ultra">
+        <img src="sam21.jpg" alt="Samsung Galaxy S21 Ultra">
         <h3>Samsung Galaxy S21 Ultra</h3>
         <p>€350.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="Samsung Galaxy S24 Ultra">
-          <input type="hidden" name="amount" value="400.00">
+          <input type="hidden" name="item_name" value="Samsung Galaxy S21 Ultra">
+          <input type="hidden" name="amount" value="350.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
@@ -237,7 +280,7 @@
 
       <!-- HP Laptop -->
       <div class="product">
-        <img src="laptophp.html" alt="HP Laptop 15">
+        <img src="hp_laptop.jpg" alt="HP Laptop 15">
         <h3>HP Laptop 15</h3>
         <p>€549.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -255,7 +298,7 @@
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="item_name" value="Redmi Note 13">
-          <input type="hidden" name="amount" value="300.00">
+          <input type="hidden" name="amount" value="250.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
@@ -286,42 +329,46 @@
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
       </div>
-       <!-- samsung galaxy a55 5G -->
+
+      <!-- samsung galaxy a55 5G -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Samsung%20Galaxy%20A55%205G%20(SM-A556B)%20Full%20Specifications%20-%20Tsar3000.jfif" alt="samsung galaxy a55 5G">
         <h3>samsung galaxy a55 5G</h3>
         <p>€320.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="samsung galaxy a55 ">
-          <input type="hidden" name="amount" value="900.00">
+          <input type="hidden" name="item_name" value="samsung galaxy a55 5G">
+          <input type="hidden" name="amount" value="320.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
       </div>
-       <!-- poco x7 pro -->
+
+      <!-- poco x7 pro -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Xiaomi%20Poco%20X7%20Pro%205g%20Dual%20Sim%20256gb%20Verde%2012ram%2050mpx.jpeg" alt="poco x7 pro">
         <h3>poco x7 pro</h3>
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="item_name" value="poco x7 pro">
-          <input type="hidden" name="amount" value="260.00">
+          <input type="hidden" name="amount" value="250.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
       </div>
-       <!-- itel a70  -->
+
+      <!-- itel a70  -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Itel%20A70%20-%204GB%20RAM%20-%20256GB_%203GB%20RAM%20-%20128GB_%20Capinha%20+%20Pelicula_%20Original_%20Dual%20Sim%204G%20_%20Shopee%20Brasil.jpeg" alt="itel a70">
         <h3>itel a70</h3>
         <p>€170.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="poco x7 pro">
+          <input type="hidden" name="item_name" value="itel a70">
           <input type="hidden" name="amount" value="170.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
-      </div> 
+      </div>
+
       <!-- redmi not 14 pro  -->
       <div class="product">
         <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxqtm52/Celular%20Xiaomi%20Note%2014%20Pro%20256GB%20+%208GB%20ram%20preto%204G,%20Bateria%205500mAh,%20Gorilla%20Glass%20Victus,%20Prote%C3%A7%C3%A3o%20IP64.jfif" alt="redmi not 14 pro">
@@ -329,19 +376,20 @@
         <p>€300.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="item_name" value="redmi not 14 pro">
-          <input type="hidden" name="amount" value="170.00">
+          <input type="hidden" name="amount" value="300.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
         </form>
-      </div> 
-           
+      </div>
+
     </div>
   </div>
 
   <footer>
     © 2025 Electro Movil iCame – Todos los derechos reservados<br>
-    Totana, Murcia – Código Postal 30850 | Correo: anonymoss
+    Totana, Murcia – Código Postal 30850 | Correo: <a href="mailto:mohamedredazekraoui@gmail.com" style="color:#fff;">mohamedredazekraoui@gmail.com</a>
   </footer>
 
 </body>
 </html>
+
