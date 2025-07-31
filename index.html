@@ -15,13 +15,31 @@
   <meta property="og:description" content="Compra móviles, portátiles y accesorios de tecnología a precios increíbles desde Murcia." />
   <meta property="og:url" content="https://redaa1111.github.io/Reda44/" />
   <meta property="og:type" content="website" />
-  <meta property="logo.html" />
+  <!-- Example OG image -->
+  <meta property="og:image" content="logo.html" />
 
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      background-color: #f4f4f4;
+
+      /* Background image */
+      background-image: url('images/background.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed; /* optional, for parallax effect */
+      color: #fff; /* default text color for readability */
+    }
+
+    /* Optional: add semi-transparent overlay for better readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* black overlay with 50% opacity */
+      z-index: -1;
     }
 
     .go-back, .go-contacto {
@@ -57,10 +75,12 @@
     }
 
     header {
-      background: #003f88;
+      background: rgba(0, 63, 136, 0.8); /* semi-transparent background */
       color: #fff;
       padding: 100px 40px 60px;
       text-align: center;
+      border-radius: 12px;
+      margin: 20px;
     }
 
     header h1 {
@@ -74,12 +94,14 @@
     }
 
     .nav-menu {
-      background: #0070fa;
+      background: rgba(0, 112, 250, 0.9);
       padding: 16px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
+      border-radius: 12px;
+      margin: 0 20px 30px;
     }
 
     .nav-menu a {
@@ -106,6 +128,9 @@
       padding: 20px;
       max-width: 1200px;
       margin: auto;
+      background: rgba(255, 255, 255, 0.95); /* light background for products */
+      border-radius: 12px;
+      color: #333;
     }
 
     .container h2 {
@@ -126,6 +151,7 @@
       padding: 15px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: #333;
     }
 
     .product img {
@@ -172,6 +198,11 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    a {
+      color: #0070fa;
     }
 
     @media (max-width: 600px) {
@@ -231,7 +262,7 @@
     <div class="product-grid">
       <!-- iphone 13 pro -->
       <div class="product">
-        <img src="iphone.html" alt="iphone 13 pro">
+        <img src="images/iphone13pro.jpg" alt="iphone 13 pro" loading="lazy">
         <h3>iphone 13 pro</h3>
         <p>€450.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -244,7 +275,7 @@
 
       <!-- samsung galaxy a55 -->
       <div class="product">
-        <img src="samsung.html" alt="samsung galaxy a55">
+        <img src="images/samsunggalaxya55.jpg" alt="samsung galaxy a55" loading="lazy">
         <h3>samsung galaxy a55</h3>
         <p>€280.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -257,7 +288,7 @@
 
       <!-- Samsung Galaxy S21 Ultra -->
       <div class="product">
-        <img src="sam21.html" alt="Samsung Galaxy S21 Ultra">
+        <img src="images/samsungs21ultra.jpg" alt="Samsung Galaxy S21 Ultra" loading="lazy">
         <h3>Samsung Galaxy S21 Ultra</h3>
         <p>€350.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -270,7 +301,7 @@
 
       <!-- HP Laptop -->
       <div class="product">
-        <img src="laptophp.html" alt="HP Laptop 15">
+        <img src="images/hplaptop15.jpg" alt="HP Laptop 15" loading="lazy">
         <h3>HP Laptop 15</h3>
         <p>€549.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -283,7 +314,7 @@
 
       <!-- Redmi Note 13 -->
       <div class="product">
-        <img src=".html" alt="Redmi Note 13">
+        <img src="images/redminote13.jpg" alt="Redmi Note 13" loading="lazy">
         <h3>Redmi Note 13</h3>
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -296,7 +327,7 @@
 
       <!-- Apple Watch S2 -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qv3uyb2/Apple%20Watch%20SE%20(2nd%20Gen)%20%5BGPS%2040mm%5D%20Smart%20Watch%20w_Midnight%20Aluminum%20Case%20&%20Midnight%20Sport%20Band%20-%20M_L.jpg" alt="Apple Watch S2">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qv3uyb2/Apple%20Watch%20SE%20(2nd%20Gen)%20%5BGPS%2040mm%5D%20Smart%20Watch%20w_Midnight%20Aluminum%20Case%20&%20Midnight%20Sport%20Band%20-%20M_L.jpg" alt="Apple Watch S2" loading="lazy">
         <h3>Apple Watch S2</h3>
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -309,11 +340,11 @@
 
       <!-- MacBook Air 13 -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qaq2gvy/MacBook%20Air%2013%20(2020,%20Intel)%20Skins%20-%20Full%20Colour%20_%20Black%20Camo.jpeg" alt="MacBook Air 13">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qaq2gvy/MacBook%20Air%2013%20(2020,%20Intel)%20Skins%20-%20Full%20Colour%20_%20Black%20Camo.jpeg" alt="MacBook Air 13" loading="lazy">
         <h3>MacBook Air 13</h3>
         <p>€900.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="item_name" value="MacBook Air 13">
+          <input type="hidden" name="item_name" value="MacBook Air 13">
           <input type="hidden" name="amount" value="900.00">
           <input type="hidden" name="currency_code" value="EUR">
           <input type="submit" class="buy-button" value="Comprar ahora">
@@ -322,7 +353,7 @@
 
       <!-- samsung galaxy a55 5G -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Samsung%20Galaxy%20A55%205G%20(SM-A556B)%20Full%20Specifications%20-%20Tsar3000.jfif" alt="samsung galaxy a55 5G">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Samsung%20Galaxy%20A55%205G%20(SM-A556B)%20Full%20Specifications%20-%20Tsar3000.jfif" alt="samsung galaxy a55 5G" loading="lazy">
         <h3>samsung galaxy a55 5G</h3>
         <p>€320.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -335,7 +366,7 @@
 
       <!-- poco x7 pro -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Xiaomi%20Poco%20X7%20Pro%205g%20Dual%20Sim%20256gb%20Verde%2012ram%2050mpx.jpeg" alt="poco x7 pro">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Xiaomi%20Poco%20X7%20Pro%205g%20Dual%20Sim%20256gb%20Verde%2012ram%2050mpx.jpeg" alt="poco x7 pro" loading="lazy">
         <h3>poco x7 pro</h3>
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -348,7 +379,7 @@
 
       <!-- itel a70  -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Itel%20A70%20-%204GB%20RAM%20-%20256GB_%203GB%20RAM%20-%20128GB_%20Capinha%20+%20Pelicula_%20Original_%20Dual%20Sim%204G%20_%20Shopee%20Brasil.jpeg" alt="itel a70">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Itel%20A70%20-%204GB%20RAM%20-%20256GB_%203GB%20RAM%20-%20128GB_%20Capinha%20+%20Pelicula_%20Original_%20Dual%20Sim%204G%20_%20Shopee%20Brasil.jpeg" alt="itel a70" loading="lazy">
         <h3>itel a70</h3>
         <p>€170.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -361,25 +392,8 @@
 
       <!-- redmi not 14 pro  -->
       <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxqtm52/Celular%20Xiaomi%20Note%2014%20Pro%20256GB%20+%208GB%20ram%20preto%204G,%20Bateria%205500mAh,%20Gorilla%20Glass%20Victus,%20Prote%C3%A7%C3%A3o%20IP64.jfif" alt="redmi not 14 pro">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxqtm52/Celular%20Xiaomi%20Note%2014%20Pro%20256GB%20+%208GB%20ram%20preto%204G,%20Bateria%205500mAh,%20Gorilla%20Glass%20Victus,%20Prote%C3%A7%C3%A3o%20IP64.jfif" alt="redmi not 14 pro" loading="lazy">
         <h3>redmi not 14 pro</h3>
         <p>€300.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="redmi not 14 pro">
-          <input type="hidden" name="amount" value="300.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    © 2025 Electro Movil iCame – Todos los derechos reservados<br>
-    Totana, Murcia – Código Postal 30850 | Correo: <a href="mailto:mohamedredazekraoui@gmail.com" style="color:#fff;">mohamedredazekraoui@gmail.com</a>
-  </footer>
-
-</body>
-</html>
-
+          <input type="hidden" name="item_name" value="redmi not
