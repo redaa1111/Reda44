@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,18 +12,21 @@
     }
 
     .top-button {
-      text-align: center;
-      margin: 20px 0 0;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
 
     .top-button button {
-      padding: 12px 24px;
-      font-size: 16px;
+      padding: 10px 18px;
+      font-size: 14px;
       background-color: #0070fa;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
     }
 
@@ -62,109 +65,5 @@
       width: 80%;
       height: 140px;
       object-fit: contain;
-      margin: 0 auto 10px;
-      display: block;
-      border-radius: 10px;
-      background: white;
-    }
 
-    .price-overlay {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(255, 0, 0, 0.85);
-      color: yellow;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 1em;
-    }
-
-    .product h3 {
-      margin: 15px 0 10px;
-      color: yellow;
-    }
-
-    .buy-button {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #0070fa;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .buy-button:hover {
-      background-color: #0059c2;
-    }
-
-    .sold::after {
-      content: "VENDIDO";
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: #fff;
-      color: red;
-      padding: 6px 12px;
-      font-weight: bold;
-      border-radius: 6px;
-      font-size: 0.95em;
-    }
-
-    .sold .price-overlay {
-      text-decoration: line-through;
-    }
-
-    footer {
-      background: #1a1a1a;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 🔙 Back Button at the Top -->
-  <div class="top-button">
-    <button onclick="history.back()">⬅ Go Back</button>
-  </div>
-
-  <div class="container">
-    <h2>OFERTAS ESPECIALES 🔥</h2>
-    <div class="product-grid">
-
-      <!-- Producto VENDIDO -->
-      <div class="product sold">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rd35u7h/Samsung%20S23%20Ultra%20256GB%20-%20Graphite%20-%20Grade%20A%20-%20The%20iOutlet.jpeg" alt="Samsung S23">
-        <div class="price-overlay"><span style="text-decoration: line-through;">€900.00</span></div>
-        <h3>Samsung S23 €555,00</h3>
-        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20Samsung%20S23&body=Hola,%20estoy%20interesado%20en%20el%20Samsung%20S23%20(€955.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
-      </div>
-
-      <!-- Producto VENDIDO -->
-      <div class="product sold">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qaq2gvy/Apple%20iPhone%2016%20128GB%20Teal%20_%20Freemans.jpg" alt="iPhone 16">
-        <div class="price-overlay"><span style="text-decoration: line-through;">€1,100</span></div>
-        <h3>iPhone 16 €900,00</h3>
-        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20iPhone%2016&body=Hola,%20estoy%20interesado%20en%20el%20iPhone%2016%20(€900.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
-      </div>
-
-      <!-- Producto VENDIDO -->
-      <div class="product sold">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Apple%20iPad%20Pro%2013-inch%20(M4)%20(2024,%207th%20generation)%20WiFi%201TB%20with%20Nano-texture%20Glass%20-%20Space%20Black.jfif" alt="iPad Pro 13">
-        <div class="price-overlay"><span style="text-decoration: line-through;">€1300.00</span></div>
-        <h3>iPad Pro 13 €1000,00</h3>
-        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20iPad%20Pro%2013&body=Hola,%20estoy%20interesado%20en%20el%20iPad%20Pro%2013%20(€1000.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
-      </div>
-
-    </div>
-  </div>
-</body>
-</html>
-
+    
