@@ -11,6 +11,26 @@
       background: linear-gradient(to bottom right, #ff0000, #0070fa);
     }
 
+    .top-button {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .top-button button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #0070fa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-button button:hover {
+      background-color: #0059c2;
+    }
+
     .container {
       padding: 30px;
     }
@@ -109,6 +129,12 @@
   </style>
 </head>
 <body>
+
+  <!-- 🔙 Back Button at the Top -->
+  <div class="top-button">
+    <button onclick="history.back()">⬅ Go Back</button>
+  </div>
+
   <div class="container">
     <h2>OFERTAS ESPECIALES 🔥</h2>
     <div class="product-grid">
@@ -128,30 +154,17 @@
         <h3>iPhone 16 €900,00</h3>
         <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20iPhone%2016&body=Hola,%20estoy%20interesado%20en%20el%20iPhone%2016%20(€900.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
       </div>
-       <!-- Producto VENDIDO -->
-      <div class="product sold">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Apple%20iPad%20Pro%2013-inch%20(M4)%20(2024,%207th%20generation)%20WiFi%201TB%20with%20Nano-texture%20Glass%20-%20Space%20Black.jfif" alt="apple ipad 13">
-        <div class="price-overlay"><span style="text-decoration: line-through;">€1300.00</span></div>
-        <h3>ipad pro 13 €1000,00</h3>
-        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20Samsung%20S23&body=Hola,%20estoy%20interesado%20en%20el%20Samsung%20S23%20(€955.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
-      </div>
-   <!-- Go Back Button -->
-  <div style="text-align: center; margin-top: 30px;">
-    <button onclick="history.back()" style="
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #0070fa;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    ">
-      ⬅ Go Back
-    </button>
-  </div>
-</section>
 
+      <!-- Producto VENDIDO -->
+      <div class="product sold">
+        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Apple%20iPad%20Pro%2013-inch%20(M4)%20(2024,%207th%20generation)%20WiFi%201TB%20with%20Nano-texture%20Glass%20-%20Space%20Black.jfif" alt="iPad Pro 13">
+        <div class="price-overlay"><span style="text-decoration: line-through;">€1300.00</span></div>
+        <h3>iPad Pro 13 €1000,00</h3>
+        <a href="mailto:mohamedredazekraoui@gmail.com?subject=Solicitud%20de%20Pedido%20(VENDIDO)%20-%20iPad%20Pro%2013&body=Hola,%20estoy%20interesado%20en%20el%20iPad%20Pro%2013%20(€1000.00),%20aunque%20está%20marcado%20como%20VENDIDO.%20¿Todavía%20está%20disponible%3F" class="buy-button">Comprar ahora</a>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
+
