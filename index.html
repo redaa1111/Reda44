@@ -220,8 +220,22 @@ header {
 </head>
 <body>
 
-  <button class="go-back" onclick="history.back()">🔙 Volver</button>
-  <a href="contacto.html" class="go-contacto">✉️ Contacto</a>
+  <script>
+  const goBackBtn = document.querySelector('.go-back');
+  const contactoBtn = document.querySelector('.go-contacto');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      // Hide buttons when scrolled down
+      goBackBtn.style.display = 'none';
+      contactoBtn.style.display = 'none';
+    } else {
+      // Show buttons when at the top
+      goBackBtn.style.display = 'inline-block';
+      contactoBtn.style.display = 'inline-flex';
+    }
+  });
+</script>
 
   <header>
     <h1>Electro Movil iCame</h1>
