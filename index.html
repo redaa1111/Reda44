@@ -15,7 +15,6 @@
   <meta property="og:description" content="Compra móviles, portátiles y accesorios de tecnología a precios increíbles desde Murcia." />
   <meta property="og:url" content="https://redaa1111.github.io/Reda44/" />
   <meta property="og:type" content="website" />
-  <meta property="logo.html" />
 
   <style>
     body {
@@ -35,13 +34,15 @@
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .go-back {
       left: 10px;
       border: none;
-      display: inline-block; /* ensure default display */
+      display: inline-block;
     }
 
     .go-contacto {
@@ -57,21 +58,21 @@
       background-color: #005bb5;
     }
 
+    /* Hide buttons when scrolling down */
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     header {
       background: #003f88;
       color: #fff;
-      padding: 100px 40px 60px;
-      text-align: center;
-    }
-    header {
-      /* Adjust or remove this if no image */
-      /* background: url('imagenes/logo-fondo.jpg') center/cover no-repeat; */
-      background-blend-mode: darken;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fff;
       padding: 100px 80px 60px;
       text-align: center;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.6);
     }
+
     header h1 {
       margin: 0;
       font-size: 2.4em;
@@ -239,160 +240,59 @@
     <div class="product-grid">
       <!-- iphone 13 pro -->
       <div class="product">
-        <img src="imagenes/iphone13pro.jpg" alt="iphone 13 pro" loading="lazy">
+        <img src="imagenes/iphone13pro.jpg" alt="iphone 13 pro" loading="lazy" />
         <h3>iphone 13 pro</h3>
         <p>€450.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="iphone 13 pro">
-          <input type="hidden" name="amount" value="450.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
+          <input type="hidden" name="item_name" value="iphone 13 pro" />
+          <input type="hidden" name="amount" value="450.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Comprar ahora" />
         </form>
       </div>
 
       <!-- samsung galaxy a55 -->
       <div class="product">
-        <img src="imagenes/samsunggalaxya55.jpg" alt="samsung galaxy a55" loading="lazy">
+        <img src="imagenes/samsunggalaxya55.jpg" alt="samsung galaxy a55" loading="lazy" />
         <h3>samsung galaxy a55</h3>
         <p>€280.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="samsung galaxy a55">
-          <input type="hidden" name="amount" value="280.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
+          <input type="hidden" name="item_name" value="samsung galaxy a55" />
+          <input type="hidden" name="amount" value="280.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Comprar ahora" />
         </form>
       </div>
 
       <!-- Samsung Galaxy S21 Ultra -->
       <div class="product">
-        <img src="imagenes/samsunggalaxys21ultra.jpg" alt="Samsung Galaxy S21 Ultra" loading="lazy">
+        <img src="imagenes/samsunggalaxys21ultra.jpg" alt="Samsung Galaxy S21 Ultra" loading="lazy" />
         <h3>Samsung Galaxy S21 Ultra</h3>
         <p>€350.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="Samsung Galaxy S21 Ultra">
-          <input type="hidden" name="amount" value="350.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
+          <input type="hidden" name="item_name" value="Samsung Galaxy S21 Ultra" />
+          <input type="hidden" name="amount" value="350.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Comprar ahora" />
         </form>
       </div>
 
       <!-- HP Laptop -->
       <div class="product">
-        <img src="imagenes/hplaptop15.jpg" alt="HP Laptop 15" loading="lazy">
+        <img src="imagenes/hplaptop15.jpg" alt="HP Laptop 15" loading="lazy" />
         <h3>HP Laptop 15</h3>
         <p>€549.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="HP Laptop 15">
-          <input type="hidden" name="amount" value="549.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
+          <input type="hidden" name="item_name" value="HP Laptop 15" />
+          <input type="hidden" name="amount" value="549.00" />
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" class="buy-button" value="Comprar ahora" />
         </form>
       </div>
 
       <!-- Redmi Note 13 -->
       <div class="product">
-        <img src="imagenes/redminote13.jpg" alt="Redmi Note 13" loading="lazy">
+        <img src="imagenes/redminote13.jpg" alt="Redmi Note 13" loading="lazy" />
         <h3>Redmi Note 13</h3>
         <p>€250.00</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="Redmi Note 13">
-          <input type="hidden" name="amount" value="250.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- Apple Watch S2 -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qv3uyb2/Apple%20Watch%20SE%20(2nd%20Gen)%20%5BGPS%2040mm%5D%20Smart%20Watch%20w_Midnight%20Aluminum%20Case%20&%20Midnight%20Sport%20Band%20-%20M_L.jpg" alt="Apple Watch S2" loading="lazy">
-        <h3>Apple Watch S2</h3>
-        <p>€250.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="Apple Watch S2">
-          <input type="hidden" name="amount" value="250.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- MacBook Air 13 -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43qaq2gvy/MacBook%20Air%2013%20(2020,%20Intel)%20Skins%20-%20Full%20Colour%20_%20Black%20Camo.jpeg" alt="MacBook Air 13" loading="lazy">
-        <h3>MacBook Air 13</h3>
-        <p>€900.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="MacBook Air 13">
-          <input type="hidden" name="amount" value="900.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- samsung galaxy a55 5G -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxstfad/Samsung%20Galaxy%20A55%205G%20(SM-A556B)%20Full%20Specifications%20-%20Tsar3000.jfif" alt="samsung galaxy a55 5G" loading="lazy">
-        <h3>samsung galaxy a55 5G</h3>
-        <p>€320.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="samsung galaxy a55 5G">
-          <input type="hidden" name="amount" value="320.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- poco x7 pro -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Xiaomi%20Poco%20X7%20Pro%205g%20Dual%20Sim%20256gb%20Verde%2012ram%2050mpx.jpeg" alt="poco x7 pro" loading="lazy">
-        <h3>poco x7 pro</h3>
-        <p>€250.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="poco x7 pro">
-          <input type="hidden" name="amount" value="250.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- itel a70  -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rwzfrck/Celular%20Itel%20A70%20-%204GB%20RAM%20-%20256GB_%203GB%20RAM%20-%20128GB_%20Capinha%20+%20Pelicula_%20Original_%20Dual%20Sim%204G%20_%20Shopee%20Brasil.jpeg" alt="itel a70" loading="lazy">
-        <h3>itel a70</h3>
-        <p>€170.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="itel a70">
-          <input type="hidden" name="amount" value="170.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-      <!-- redmi not 14 pro  -->
-      <div class="product">
-        <img src="https://uploads.onecompiler.io/43pgtf5aq/43rxqtm52/Celular%20Xiaomi%20Note%2014%20Pro%20256GB%20+%208GB%20ram%20preto%204G,%20Bateria%205500mAh,%20Gorilla%20Glass%20Victus,%20Prote%C3%A7%C3%A3o%20IP64.jfif" alt="redmi not 14 pro" loading="lazy">
-        <h3>redmi not 14 pro</h3>
-        <p>€300.00</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="item_name" value="redmi not 14 pro">
-          <input type="hidden" name="amount" value="300.00">
-          <input type="hidden" name="currency_code" value="EUR">
-          <input type="submit" class="buy-button" value="Comprar ahora">
-        </form>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    © 2025 Electro Movil iCame – Todos los derechos reservados<br>
-    Totana, Murcia – Código Postal 30850 | Correo: 
-    <a href="mailto:mohamedredazekraoui@gmail.com" style="color:#fff;">mohamedredazekraoui@gmail.com</a>
-  </footer>
-
-  <script>
-    const goBackBtn = document.querySelector('.go-back');
-    const contactoBtn = document.querySelector('.go-contacto');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        goBack
