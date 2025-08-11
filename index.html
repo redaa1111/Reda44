@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mercado de dispositivos electrónicos usados</title>
   <style>
-    /* Configuración general */
+    /* Ajustes generales */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,7 +16,7 @@
       text-decoration: none;
       color: inherit;
     }
-    /* Encabezado */
+    /* Header */
     header {
       background-color: #0070fa;
       color: white;
@@ -27,7 +27,12 @@
       letter-spacing: 1.5px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    /* Menú de navegación */
+    header img {
+      height: 60px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    /* Navegación */
     nav {
       background-color: #005bb5;
       display: flex;
@@ -63,7 +68,7 @@
       padding-bottom: 5px;
       font-size: 1.6em;
     }
-    /* Cuadrícula de productos */
+    /* Grid de productos */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
@@ -124,7 +129,7 @@
     .product-info button:hover {
       background-color: #005bb5;
     }
-    /* Respuesta para pantallas pequeñas */
+    /* Responsive pequeño */
     @media (max-width: 600px) {
       header {
         font-size: 1.3em;
@@ -142,6 +147,7 @@
 <body>
 
 <header>
+  <img src="logo.jpg" alt="Logo" />
   Mercado de dispositivos electrónicos usados
 </header>
 
@@ -158,19 +164,19 @@
     <h2>Ofertas especiales</h2>
     <div class="products-grid">
       <div class="product-card">
-        <img src="https://via.placeholder.com/300x180?text=Oferta+especial+1" alt="Oferta especial 1" />
+        <img src="samsung.jpeg" />
         <div class="product-info">
           <h3>Teléfono Samsung Galaxy S20</h3>
-          <p>Excelente estado con garantía de 6 meses</p>
+          <p>Estado excelente con garantía de 6 meses</p>
           <div class="price">€150</div>
           <button>Comprar ahora</button>
         </div>
       </div>
       <div class="product-card">
-        <img src="https://via.placeholder.com/300x180?text=Oferta+especial+2" alt="Oferta especial 2" />
+        <img src="https://via.placeholder.com/300x180?text=Oferta+Especial+2" alt="Oferta Especial 2" />
         <div class="product-info">
           <h3>Portátil Dell Intel Core i5</h3>
-          <p>RAM 8GB, Disco 256GB SSD</p>
+          <p>RAM 8GB, disco SSD 256GB</p>
           <div class="price">€300</div>
           <button>Comprar ahora</button>
         </div>
@@ -194,7 +200,7 @@
         <img src="https://via.placeholder.com/300x180?text=Selección+2" alt="Selección 2" />
         <div class="product-info">
           <h3>Tablet Samsung Galaxy Tab A</h3>
-          <p>Pantalla 10.1 pulgadas, batería en buen estado</p>
+          <p>Pantalla 10.1", batería en buen estado</p>
           <div class="price">€120</div>
           <button>Comprar ahora</button>
         </div>
@@ -228,11 +234,12 @@
 
   <section id="contact">
     <h2>Contáctanos</h2>
-    <p>Puedes contactarnos vía correo electrónico: <a href="mailto:info@electronicsused.com">info@electronicsused.com</a></p>
+    <p>Puedes comunicarte con nosotros vía correo electrónico: <a href="mailto:info@electronicsused.com">info@electronicsused.com</a></p>
   </section>
 
 </main>
 
 </body>
 </html>
+
 
