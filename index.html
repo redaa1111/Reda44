@@ -1,147 +1,264 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contacto - Electro Movil iCame</title>
-<style>
-  /* Reset y base */
-  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background: linear-gradient(120deg, #e0f0ff, #f4f4f4, #d6e6ff);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #333;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercado de dispositivos electrónicos usados</title>
+  <style>
+    /* ====== Ajustes generales ====== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  @keyframes gradientBG {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
+    /* ====== Header ====== */
+    header {
+      background-color: #0070fa;
+      color: white;
+      text-align: center;
+      padding: 20px 40px;
+      font-size: 1.8em;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    header img {
+      height: 60px;
+      display: block;
+      margin: 0 auto 10px;
+    }
 
-  /* Botón Go Back */
-  .go-back {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: linear-gradient(135deg, #0070fa, #00bfff);
-    color: #fff;
-    border: none;
-    padding: 14px 22px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 6px 20px rgba(0,112,250,0.4);
-    transition: all 0.3s ease;
-    z-index: 1000;
-  }
-  .go-back:hover {
-    transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 12px 25px rgba(0,112,250,0.5);
-  }
+    /* ====== Navegación ====== */
+    nav {
+      background-color: #005bb5;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 12px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background: linear-gradient(to right, #0070fa, #005bb5);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    nav a:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(to right, #005bb5, #003f88);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    }
 
-  header {
-    background-color: rgba(0,112,250,0.9);
-    color: #fff;
-    width: 100%;
-    max-width: 600px;
-    padding: 50px 25px 40px;
-    border-radius: 15px 15px 0 0;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0,112,250,0.3);
-    margin-bottom: 0;
-  }
-  header h1 { font-size: 2.8rem; letter-spacing: 1.5px; }
+    /* ====== Contenedor principal ====== */
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
 
-  .container {
-    background: #fff;
-    width: 100%;
-    max-width: 600px;
-    padding: 35px;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-  }
+    /* ====== Secciones ====== */
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      color: #0070fa;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #0070fa;
+      padding-bottom: 5px;
+      font-size: 1.7em;
+    }
 
-  /* Botón de contacto */
-  .contact-link {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
-    background: linear-gradient(135deg, #00bfff, #0070fa);
-    padding: 16px 36px;
-    border-radius: 14px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,112,250,0.4);
-  }
-  .contact-link:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,112,250,0.5);
-    background: linear-gradient(135deg, #0070fa, #00bfff);
-  }
+    /* ====== Grid de productos ====== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 25px;
+    }
 
-  footer {
-    margin-top: 40px;
-    color: #666;
-    font-size: 0.9rem;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    user-select: none;
-  }
+    /* ====== Tarjeta de producto ====== */
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .product-card img:hover {
+      transform: scale(1.05);
+    }
 
-  @media (max-width: 640px) {
-    header, .container, footer { padding: 20px; border-radius:12px; }
-    .go-back { padding:10px 16px; font-size:14px; }
-    .contact-link { padding:14px 28px; font-size:1rem; border-radius:12px; }
-  }
-</style>
+    .product-info {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.3em;
+      color: #0070fa;
+    }
+    .product-info p {
+      margin: 0 0 15px 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+    .product-info .price {
+      font-weight: bold;
+      color: #e60000;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    /* ====== Botón mejorado ====== */
+    .product-info button {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border: none;
+      color: white;
+      padding: 12px 0;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .product-info button:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ====== Responsive pequeño ====== */
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.4em;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      main {
+        margin: 20px 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <button class="go-back" onclick="history.back()">⬅ Go Back</button>
+<header>
+  <img src="logo.png" alt="Logo" />
+  Mercado de dispositivos electrónicos usados
+</header>
 
-  <header>
-    <h1>Contacto</h1>
-  </header>
+<nav>
+  <a href="#special-offers">Ofertas especiales</a>
+  <a href="#featured">Selecciones</a>
+  <a href="#products">Productos</a>
+  <a href="#contact">Contáctanos</a>
+</nav>
 
-  <div class="container">
-    <a class="contact-link" href="mailto:mohamedredazekraoui@gmail.com" title="Enviar correo directo">
-      ✉️ Contacto directo por correo
-    </a>
-  </div>
+<main>
+  <section id="special-offers">
+    <h2>Ofertas especiales</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oferta+Especial+1" alt="Oferta Especial 1" />
+        <div class="product-info">
+          <h3>Teléfono Samsung Galaxy S20</h3>
+          <p>Estado excelente con garantía de 6 meses</p>
+          <div class="price">€150</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oferta+Especial+2" alt="Oferta Especial 2" />
+        <div class="product-info">
+          <h3>Portátil Dell Intel Core i5</h3>
+          <p>RAM 8GB, disco SSD 256GB</p>
+          <div class="price">€300</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 Electro Movil iCame. Todos los derechos reservados.
-  </footer>
+  <section id="featured">
+    <h2>Selecciones</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Selección+1" alt="Selección 1" />
+        <div class="product-info">
+          <h3>iPhone X usado</h3>
+          <p>Buen estado, con cargador original</p>
+          <div class="price">€250</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Selección+2" alt="Selección 2" />
+        <div class="product-info">
+          <h3>Tablet Samsung Galaxy Tab A</h3>
+          <p>Pantalla 10.1", batería en buen estado</p>
+          <div class="price">€120</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const contactLink = document.querySelector('.contact-link');
-    contactLink.addEventListener('click', function(e){
-      alert('Se abrirá tu cliente de correo para enviar el mensaje.');
-    });
-  </script>
+  <section id="products">
+    <h2>Productos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Producto+1" alt="Producto 1" />
+        <div class="product-info">
+          <h3>Auriculares inalámbricos</h3>
+          <p>Estado nuevo</p>
+          <div class="price">€40</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Producto+2" alt="Producto 2" />
+        <div class="product-info">
+          <h3>Cámara digital</h3>
+          <p>Buen estado con funda</p>
+          <div class="price">€180</div>
+          <button onclick="alert('Producto añadido al carrito!')">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contáctanos</h2>
+    <p>Puedes comunicarte con nosotros vía correo electrónico: <a href="mailto:info@electronicsused.com">info@electronicsused.com</a></p>
+  </section>
+</main>
 
 </body>
 </html>
