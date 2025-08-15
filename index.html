@@ -1,87 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Electro Store</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroStore - Elevate Your Tech Experience</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'headline': ['Montserrat', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    colors: {
+                        'primary': '#1f2937',
+                        'accent': '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-<!-- Hero Section -->
-<section class="bg-gradient-to-r from-purple-700 to-gray-800 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="font-headline text-5xl font-black mb-6">Elevate Your Tech Experience</h2>
-        <a href="shop.html" 
-           class="bg-accent bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg">
-            Shop Now
-        </a>
-    </div>
-</section>
-
-<!-- Products Section -->
-<section class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
-        <div id="products-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
-    </div>
-</section>
-
-<script>
-// Sample Products
-const products = [
-    {
-        name: "Samsung Galaxy S24",
-        category: "smartphones",
-        price: 899,
-        image: "product1.jpg",
-        description: "AI-powered photography and performance in a sleek design."
-    },
-    {
-        name: "MacBook Air M2",
-        category: "laptops",
-        price: 1299,
-        image: "product2.jpg",
-        description: "Lightweight laptop with Apple's M2 chip for fast performance."
-    },
-    {
-        name: "Sony WH-1000XM5",
-        category: "headphones",
-        price: 399,
-        image: "product3.jpg",
-        description: "Industry-leading noise cancellation and superior sound."
-    }
-];
-
-// Render Products
-function renderProducts(productsToRender) {
-    const productsGrid = document.getElementById('products-grid');
-    productsGrid.innerHTML = '';
-
-    productsToRender.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
-
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
-            <div class="p-6">
-                <h3 class="font-bold text-xl mb-2">${product.name}</h3>
-                <p class="text-gray-600 text-sm mb-4">${product.description}</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-lg font-semibold text-primary">$${product.price}</span>
-                    <a href="mailto:mohamedredazekraoui@gmail.com?subject=I want to buy ${encodeURIComponent(product.name)}"
-                       class="bg-accent hover:bg-purple-600 text-white px-4 py-2 rounded-lg text-sm transition duration-200">
-                        Buy Now
-                    </a>
+<body class="font-body bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="font-headline text-2xl font-black text-primary">ElectroStore</h1>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Smartphones</a>
+                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Laptops</a>
+                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Headphones</a>
+                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Gadgets</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-accent transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button id="cart-btn" class="relative text-gray-700 hover:text-accent transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9m-9 0V19a2 2 0 002 2h7a2 2 0 002-2v-4"></path>
+                        </svg>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
                 </div>
             </div>
-        `;
-        productsGrid.appendChild(productCard);
-    });
-}
+        </div>
+    </header>
 
-renderProducts(products);
-</script>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-gray-800 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-headline text-5xl font-black mb-6">Elevate Your Tech Experience</h2>
+            <button class="bg-accent hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg">
+                Shop Now
+            </button>
+        </div>
+    </section>
 
+    <!-- Product Filters -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-wrap gap-4 justify-center">
+            <button class="filter-btn active bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-category="all">
+                All Products
+            </button>
+            <button class="filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200" data-category="smartphones">
+                Smartphones
+            </button>
+            <button class="filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200" data-category="laptops">
+                Laptops
+            </button>
+            <button class="filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200" data-category="headphones">
+                Headphones
+            </button>
+            <button class="filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200" data-category="gadgets">
+                Gadgets
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6 border-b">
+            <div class="flex items-center justify-between">
+                <h3 class="font-headline text-xl font-black text-primary">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6">
+            <p class="text-gray-500 text-center">Your cart is empty</p>
+        </div>
+        <div class="border-t p-6">
+            <div class="flex items-center justify-between mb-4">
+                <span class="font-semibold">Total: </span>
+                <span id="cart-total" class="font-bold text-xl">$0.00</span>
+            </div>
+            <button class="w-full bg-accent hover:bg-purple-600 text-white py-3 rounded-lg font-semibold transition-colors duration-200">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "iPhone 15 Pro",
+                category: "smartphones",
+                price: 999,
+                image: "iphone.jpeg",
+                rating: 4.8,
+                description: "Experience unparalleled performance with the latest iPhone featuring titanium design."
+            },
+            {
+                id: 2,
+                name: "MacBook Pro M3",
+                category: "laptops",
+                price: 1999,
+                image: "macbook.jpeg",
+                rating: 4.9,
+                description: "Revolutionary M3 chip delivers incredible performance for professionals."
+            },
+            {
+                id: 3,
+                name: "AirPods Pro",
+                category: "headphones",
+                price: 249,
+                image: "airpods.jpeg",
+                rating: 4.7,
+                description: "Experience unparalleled sound quality with active noise cancellation."
+            },
+            {
+                id: 4,
+                name: "Apple Watch Ultra",
+                category: "gadgets",
+                price: 799,
+                image: "applewatch.jpeg",
+                rating: 4.6,
+                description: "The most rugged and capable Apple Watch designed for adventure."
+            },
+            {
+                id: 5,
+                name: "Samsung Galaxy S24",
+                category: "smartphones",
+                price: 899,
+                image: "galaxys24.jpeg",
+                rating: 4.5,
+                description: "AI-powered photography and performance in a sleek design."
+            },
+            {
+                id: 6,
+                name: "Dell XPS 13",
+                category: "laptops",
+                price: 1299,
+                image: "/placeholder.svg?height=300&width=300",
+                rating: 4.4,
+                description: "Ultra-portable laptop with stunning InfinityEdge display."
+            },
+            {
+                id: 7,
+                name: "Sony WH-1000XM5",
+                category: "headphones",
+                price: 399,
+                image: "/placeholder.svg?height=300&width=300",
+                rating: 4.8,
+                description: "Industry-leading noise canceling with exceptional sound quality."
+            },
+            {
+                id: 8,
+                name: "iPad Pro",
+                category: "gadgets",
+                price: 1099,
+                image: "ipad.jpeg",
+                rating: 4.7,
+                description: "The ultimate iPad experience with M2 chip and Liquid Retina display."
+            }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        // DOM elements
+        const productsGrid = document.getElementById('products-grid');
+        const cartBtn = document.getElementById('cart-btn');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCart = document.getElementById('close-cart');
+        const cartCount = document.getElementById('cart-count');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Render products
+        function renderProducts(productsToRender = products) {
+            productsGrid.innerHTML = '';
+            
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
+                
+                productCard.innerHTML = 
+                    `<div class="relative overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white rounded-full px-2 py-1 text-sm font-semibold flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            ${product.rating}
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-2">${product.name}</h3>
+                        <p class="text-gray-600 text-sm mb-4">${product.description}</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$${product.price}</span>
+                            <button onclick="window.location='mailto:mohamedredazekraoui@gmail.com?subject=Buy%20Now%20${product.name}&body=I%20want%20to%20buy%20this%20product';" class="bg-accent hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 add-to-cart-btn">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>`;
+                
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            currentFilter = category;
+            const filteredProducts = category === 'all' ? products : products.filter(p => p.category === category);
+            renderProducts(filteredProducts);
+            
+            // Update filter buttons
+            filterBtns.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.className = 'filter-btn active bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-200';
+                } else {
+                    btn.className = 'filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200';
+                }
+            });
+        }
+
+        // Initialize
+        renderProducts();
+    </script>
 </body>
 </html>
