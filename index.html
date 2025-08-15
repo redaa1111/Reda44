@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElectroStore - Elevate Your Tech Experience</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -33,10 +33,10 @@
                 </div>
                 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Smartphones</a>
-                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Laptops</a>
-                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Headphones</a>
-                    <a href="#" class="text-gray-700 hover:text-accent transition-colors duration-200">Gadgets</a>
+                    <a href="#" data-category="smartphones" class="nav-link text-gray-700 hover:text-accent transition-colors duration-200">Smartphones</a>
+                    <a href="#" data-category="laptops" class="nav-link text-gray-700 hover:text-accent transition-colors duration-200">Laptops</a>
+                    <a href="#" data-category="headphones" class="nav-link text-gray-700 hover:text-accent transition-colors duration-200">Headphones</a>
+                    <a href="#" data-category="gadgets" class="nav-link text-gray-700 hover:text-accent transition-colors duration-200">Gadgets</a>
                 </nav>
                 
                 <div class="flex items-center space-x-4">
@@ -126,104 +126,30 @@
     <script>
         // Product data
         const products = [
-            {
-                id: 1,
-                name: "iPhone 15 Pro",
-                category: "smartphones",
-                price: 999,
-                image: "iphone.jpeg",
-                rating: 4.8,
-                description: "Experience unparalleled performance with the latest iPhone featuring titanium design."
-            },
-            {
-                id: 2,
-                name: "MacBook Pro M3",
-                category: "laptops",
-                price: 1999,
-                image: "macbook.jpeg",
-                rating: 4.9,
-                description: "Revolutionary M3 chip delivers incredible performance for professionals."
-            },
-            {
-                id: 3,
-                name: "AirPods Pro",
-                category: "headphones",
-                price: 249,
-                image: "airpods.jpeg",
-                rating: 4.7,
-                description: "Experience unparalleled sound quality with active noise cancellation."
-            },
-            {
-                id: 4,
-                name: "Apple Watch Ultra",
-                category: "gadgets",
-                price: 799,
-                image: "applewatch.jpeg",
-                rating: 4.6,
-                description: "The most rugged and capable Apple Watch designed for adventure."
-            },
-            {
-                id: 5,
-                name: "Samsung Galaxy S24",
-                category: "smartphones",
-                price: 899,
-                image: "galaxys24.jpeg",
-                rating: 4.5,
-                description: "AI-powered photography and performance in a sleek design."
-            },
-            {
-                id: 6,
-                name: "Dell XPS 13",
-                category: "laptops",
-                price: 1299,
-                image: "/placeholder.svg?height=300&width=300",
-                rating: 4.4,
-                description: "Ultra-portable laptop with stunning InfinityEdge display."
-            },
-            {
-                id: 7,
-                name: "Sony WH-1000XM5",
-                category: "headphones",
-                price: 399,
-                image: "/placeholder.svg?height=300&width=300",
-                rating: 4.8,
-                description: "Industry-leading noise canceling with exceptional sound quality."
-            },
-            {
-                id: 8,
-                name: "iPad Pro",
-                category: "gadgets",
-                price: 1099,
-                image: "ipad.jpeg",
-                rating: 4.7,
-                description: "The ultimate iPad experience with M2 chip and Liquid Retina display."
-            }
+            { id: 1, name: "iPhone 15 Pro", category: "smartphones", price: 999, image: "iphone.jpeg", rating: 4.8, description: "Experience unparalleled performance with the latest iPhone featuring titanium design." },
+            { id: 2, name: "MacBook Pro M3", category: "laptops", price: 1999, image: "macbook.jpeg", rating: 4.9, description: "Revolutionary M3 chip delivers incredible performance for professionals." },
+            { id: 3, name: "AirPods Pro", category: "headphones", price: 249, image: "airpods.jpeg", rating: 4.7, description: "Experience unparalleled sound quality with active noise cancellation." },
+            { id: 4, name: "Apple Watch Ultra", category: "gadgets", price: 799, image: "applewatch.jpeg", rating: 4.6, description: "The most rugged and capable Apple Watch designed for adventure." },
+            { id: 5, name: "Samsung Galaxy S24", category: "smartphones", price: 899, image: "galaxys24.jpeg", rating: 4.5, description: "AI-powered photography and performance in a sleek design." },
+            { id: 6, name: "Dell XPS 13", category: "laptops", price: 1299, image: "/placeholder.svg?height=300&width=300", rating: 4.4, description: "Ultra-portable laptop with stunning InfinityEdge display." },
+            { id: 7, name: "Sony WH-1000XM5", category: "headphones", price: 399, image: "/placeholder.svg?height=300&width=300", rating: 4.8, description: "Industry-leading noise canceling with exceptional sound quality." },
+            { id: 8, name: "iPad Pro", category: "gadgets", price: 1099, image: "ipad.jpeg", rating: 4.7, description: "The ultimate iPad experience with M2 chip and Liquid Retina display." }
         ];
 
-        let cart = [];
         let currentFilter = 'all';
 
         // DOM elements
         const productsGrid = document.getElementById('products-grid');
-        const cartBtn = document.getElementById('cart-btn');
-        const cartSidebar = document.getElementById('cart-sidebar');
-        const cartOverlay = document.getElementById('cart-overlay');
-        const closeCart = document.getElementById('close-cart');
-        const cartCount = document.getElementById('cart-count');
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
         const filterBtns = document.querySelectorAll('.filter-btn');
 
         // Render products
         function renderProducts(productsToRender = products) {
             productsGrid.innerHTML = '';
-            
             productsToRender.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
-                
-                productCard.innerHTML = 
-                    `<div class="relative overflow-hidden">
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden">
                         <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
                         <div class="absolute top-4 right-4 bg-white rounded-full px-2 py-1 text-sm font-semibold flex items-center">
                             <svg class="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -237,33 +163,41 @@
                         <p class="text-gray-600 text-sm mb-4">${product.description}</p>
                         <div class="flex items-center justify-between">
                             <span class="text-2xl font-bold text-primary">$${product.price}</span>
-                            <button onclick="window.location='mailto:mohamedredazekraoui@gmail.com?subject=Buy%20Now%20${product.name}&body=I%20want%20to%20buy%20this%20product';" class="bg-accent hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 add-to-cart-btn">
+                            <button onclick="window.location='mailto:mohamedredazekraoui@gmail.com?subject=Buy%20Now%20${product.name}&body=I%20want%20to%20buy%20this%20product';" class="bg-accent hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                                 Buy Now
                             </button>
                         </div>
                     </div>`;
-                
-                productsGrid.appendChild(productCard);
+                productsGrid.appendChild(card);
             });
         }
 
         // Filter products
         function filterProducts(category) {
-            currentFilter = category;
-            const filteredProducts = category === 'all' ? products : products.filter(p => p.category === category);
-            renderProducts(filteredProducts);
-            
-            // Update filter buttons
+            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+            renderProducts(filtered);
+
             filterBtns.forEach(btn => {
-                if (btn.dataset.category === category) {
-                    btn.className = 'filter-btn active bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-200';
-                } else {
-                    btn.className = 'filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200';
-                }
+                btn.className = btn.dataset.category === category 
+                    ? 'filter-btn active bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-200'
+                    : 'filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200';
             });
         }
 
-        // Initialize
+        // Filter button listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => filterProducts(btn.dataset.category));
+        });
+
+        // Top nav links filtering
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                filterProducts(link.dataset.category);
+            });
+        });
+
+        // Initial render
         renderProducts();
     </script>
 </body>
