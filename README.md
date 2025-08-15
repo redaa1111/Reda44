@@ -1,55 +1,22 @@
-# Electro Movil iCame
+# ElectroStore
 
-Bienvenido a **Electro Movil iCame**, tu tienda online de confianza especializada en productos electrónicos de alta calidad al mejor precio.  
-Ubicados en Totana, Murcia (España), ofrecemos una selección de smartphones, ordenadores portátiles, relojes inteligentes y más.
+**ElectroStore** is a modern, responsive e-commerce website template for showcasing tech products such as smartphones, laptops, headphones, and gadgets. Built with **HTML, Tailwind CSS, and JavaScript**, it provides a sleek and interactive shopping experience.
 
-## 🌐 Sitio Web
+## Features
 
-🔗 [Visita el sitio web](https://redaa1111.github.io/Reda44/)
+- Responsive design for desktop, tablet, and mobile
+- Dynamic product grid with images, descriptions, ratings, and prices
+- Filter products by category
+- "Buy Now" button opens email for instant purchase requests
+- Hero section with call-to-action button
+- Tailwind CSS for modern, clean styling
 
-## 🛒 Características
-
-- 🧱 Diseño limpio, moderno y adaptable (responsive)
-- 🖼️ Imágenes de productos optimizadas
-- 💳 Integración con PayPal para compras rápidas
-- 📱 Compatible con móviles y tablets
-- 🔗 Navegación sencilla con botones de acceso rápido
-
-## 🧩 Tecnologías utilizadas
+## Technologies Used
 
 - HTML5
-- CSS3 (con diseño responsive)
-- GitHub Pages (para hosting gratuito)
-- PayPal (para pagos)
+- Tailwind CSS
+- Google Fonts (Montserrat, Open Sans)
+- JavaScript for dynamic product rendering and filtering
 
-## 📦 Productos destacados
+## Project Structure
 
-- iPhone 13 Pro  
-- Samsung Galaxy S21 Ultra  
-- MacBook Air 13  
-- Apple Watch S2  
-- Redmi Note 13  
-- y muchos más...
-
-## 📬 Contacto
-
-📧 Email: mohamedredazekraoui@gmail.com  
-📍 Ubicación: Totana, Murcia, España  
-🏷️ Código Postal: 30850
-
-## 🛠 Cómo contribuir
-
-1. Haz un fork del repositorio  
-2. Crea una rama nueva (`git checkout -b mejora-x`)  
-3. Haz tus cambios  
-4. Haz un pull request
-
-## 📄 Licencia
-
-Este proyecto es de uso abierto para fines educativos y comerciales.  
-Puedes modificarlo y reutilizarlo con fines propios sin restricciones.
-
----
-
-Gracias por visitar **Electro Movil iCame** 💡
-index.html
