@@ -41,11 +41,17 @@
                 </nav>
                 
                 <div class="flex items-center space-x-4">
-                    <button class="text-gray-700 hover:text-accent transition-colors duration-200">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </button>
+                    <!-- Search Button + Input -->
+                    <div class="relative">
+                        <input type="text" id="search-input" placeholder="Search..." class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-48 border rounded-lg px-3 py-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button id="search-btn" class="text-gray-700 hover:text-accent transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Cart -->
                     <button id="cart-btn" class="relative text-gray-700 hover:text-accent transition-colors duration-200">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0h9m-9 0V19a2 2 0 002 2h7a2 2 0 002-2v-4"></path>
@@ -142,10 +148,16 @@
         // DOM elements
         const productsGrid = document.getElementById('products-grid');
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
 
         // Render products
         function renderProducts(productsToRender = products) {
             productsGrid.innerHTML = '';
+            if (productsToRender.length === 0) {
+                productsGrid.innerHTML = '<p class="text-center text-gray-500 col-span-full">No products found</p>';
+                return;
+            }
             productsToRender.forEach(product => {
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1';
@@ -175,28 +187,37 @@
 
         // Filter products
         function filterProducts(category) {
+            currentFilter = category;
             const filtered = category === 'all' ? products : products.filter(p => p.category === category);
             renderProducts(filtered);
-
-            filterBtns.forEach(btn => {
-                btn.className = btn.dataset.category === category 
-                    ? 'filter-btn active bg-accent text-white px-6 py-2 rounded-full font-medium transition-all duration-200'
-                    : 'filter-btn bg-white text-gray-700 px-6 py-2 rounded-full font-medium border hover:bg-accent hover:text-white transition-all duration-200';
-            });
         }
 
-        // Filter button listeners
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => filterProducts(btn.dataset.category));
-        });
+        // Search products
+        function searchProducts(query) {
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.description.toLowerCase().includes(query.toLowerCase())
+            );
+            renderProducts(filtered);
+        }
 
-        // Top nav links filtering
+        // Event listeners
+        filterBtns.forEach(btn => btn.addEventListener('click', () => filterProducts(btn.dataset.category)));
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
                 filterProducts(link.dataset.category);
             });
         });
+
+        // Toggle search input
+        searchBtn.addEventListener('click', () => {
+            searchInput.classList.toggle('hidden');
+            if (!searchInput.classList.contains('hidden')) searchInput.focus();
+        });
+
+        // Search on typing
+        searchInput.addEventListener('input', () => searchProducts(searchInput.value));
 
         // Initial render
         renderProducts();
